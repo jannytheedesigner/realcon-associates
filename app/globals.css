@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Onest:wght@100..900&display=swap');
 @import url('https://fonts.cdnfonts.com/css/proxima-nova-condensed');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
 @import url('../fonts/primary-font/css/expose.css');
 @import url('../fonts/secondary-font/stylesheet.css');
 @import "tailwindcss";
@@ -14,10 +15,10 @@
   --color-brand-primary: #00E89B;
   --color-brand-primary-light: #B3F5EB;
   --color-brand-primary-dark: #2A8A7D;
-  --color-brand-secondary: #3A996B;
+  --color-brand-secondary: #064442;
   --color-neutral: #D7FFEC;
   --color-brand-secondary-light: #8C99B5;
-  --color-brand-secondary-dark: #141E33;
+  --color-brand-secondary-dark: #042625;
   --color-brand-complimentary: #043D3D;
 
 
@@ -129,14 +130,23 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    font-family: "Proxima Nova Regular", serif;
+    font-family: "Inter", serif;
   }
   body {
     @apply bg-background text-foreground;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h4, h5, h6 {
     @apply font-bold;
+    font-family: "Expose", sans-serif;
+  }
+
+  p {
+    @apply text-sm;
+  }
+
+  h3 {
+    @apply font-medium;
     font-family: "Expose", sans-serif;
   }
 

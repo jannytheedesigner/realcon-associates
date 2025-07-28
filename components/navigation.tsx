@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Building2, Phone, Menu, X } from "lucide-react"
+import { Phone, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
@@ -23,7 +23,7 @@ export function Navigation() {
             />
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 text-sm tracking-tight">
             <Link href="/" className="text-gray-700 hover:text-brand-primary font-semibold transition-colors">
               Home
             </Link>
@@ -48,9 +48,9 @@ export function Navigation() {
           </div>
 
           <div className="hidden md:block">
-            <Button className="bg-brand-primary hover:bg-brand-primary/90 text-white">
+            <Button className="bg-brand-secondary-dark hover:bg-brand-primary/90 text-sm text-white">
               <Phone className="h-4 w-4 mr-2" />
-              +265 XXX XXX XXX
+              +265(0) 995 477 957
             </Button>
           </div>
 

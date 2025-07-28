@@ -1,10 +1,11 @@
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, User, ArrowRight, Clock } from "lucide-react"
 import Image from "next/image"
+import HeroSection from "@/components/HeroSection";
+import React from "react";
+import {CtaSection} from "@/components/CtaSection";
 
 export default function BlogPage() {
   const blogPosts = [
@@ -17,7 +18,7 @@ export default function BlogPage() {
       author: "Grace Mwale",
       date: "December 15, 2024",
       readTime: "8 min read",
-      image: "/placeholder.svg?height=250&width=400",
+      image: "",
       featured: true,
     },
     {
@@ -29,7 +30,7 @@ export default function BlogPage() {
       author: "Sarah Banda",
       date: "December 10, 2024",
       readTime: "6 min read",
-      image: "/placeholder.svg?height=250&width=400",
+      image: "/images/slide-2.webp",
       featured: false,
     },
     {
@@ -41,44 +42,21 @@ export default function BlogPage() {
       author: "James Mbewe",
       date: "December 5, 2024",
       readTime: "5 min read",
-      image: "/placeholder.svg?height=250&width=400",
+      image: "/images/slide-1.webp",
       featured: false,
     },
     {
       id: 4,
       title: "Sustainable Building Practices in Malawi",
       excerpt:
-        "How sustainable construction methods are shaping the future of building development in Malawi's urban centers.",
+          "How sustainable construction methods are shaping the future of building development in Malawi's urban centers.",
       category: "Sustainability",
       author: "Michael Phiri",
       date: "November 28, 2024",
       readTime: "7 min read",
-      image: "/placeholder.svg?height=250&width=400",
+      image: "/images/slide-3.webp",
       featured: false,
-    },
-    {
-      id: 5,
-      title: "Property Transaction Guide: Legal Requirements in Malawi",
-      excerpt: "Essential legal considerations and documentation requirements for property transactions in Malawi.",
-      category: "Legal",
-      author: "Patricia Kamoto",
-      date: "November 20, 2024",
-      readTime: "9 min read",
-      image: "/placeholder.svg?height=250&width=400",
-      featured: false,
-    },
-    {
-      id: 6,
-      title: "Building Survey Best Practices for Property Buyers",
-      excerpt:
-        "Important aspects of building surveys and what property buyers should look for when purchasing real estate.",
-      category: "Property",
-      author: "David Chirwa",
-      date: "November 15, 2024",
-      readTime: "6 min read",
-      image: "/placeholder.svg?height=250&width=400",
-      featured: false,
-    },
+    }
   ]
 
   const featuredPost = blogPosts.find((post) => post.featured)
@@ -86,56 +64,49 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-neutral to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-contrast-dark mb-6">Industry Insights & News</h1>
-            <p className="text-xl text-secondary max-w-3xl mx-auto">
-              Stay updated with the latest trends, insights, and developments in Malawi's real estate and construction
-              industry
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+          title="Industry Insights & News"
+          description="Stay updated with the latest trends, insights, and developments in Malawi's real estate and construction
+              industry"
+          imageSrc="/images/about-header.jpg"
+      />
 
       {/* Featured Post */}
       {featuredPost && (
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8">
-              <Badge className="bg-primary text-white mb-4">Featured Article</Badge>
-              <h2 className="text-3xl font-bold text-contrast-dark">Latest Insights</h2>
+              <Badge className="bg-brand-primary text-brand-complimentary px-2 font-medium mb-4">Featured Article</Badge>
+              <h2 className="text-5xl font-bold text-brand-complimentary">Latest Insights</h2>
             </div>
 
             <Card className="border-neutral/30 overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <div className="relative">
                   <Image
-                    src={featuredPost.image || "/placeholder.svg"}
+                    src={featuredPost.image || "/images/project-1.jpg"}
                     alt={featuredPost.title}
                     width={600}
                     height={400}
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-4 left-4">
-                    <Badge className="bg-primary text-white">{featuredPost.category}</Badge>
+                    <Badge className="bg-brand-primary-dark text-white">{featuredPost.category}</Badge>
                   </div>
                 </div>
                 <CardContent className="p-8 flex flex-col justify-center">
-                  <h3 className="text-2xl md:text-3xl font-bold text-contrast-dark mb-4">{featuredPost.title}</h3>
-                  <p className="text-secondary text-lg mb-6">{featuredPost.excerpt}</p>
-                  <div className="flex items-center text-sm text-secondary mb-6">
-                    <User className="h-4 w-4 mr-2" />
+                  <h3 className="text-2xl md:text-3xl font-bold text-brand-primary-dark mb-4">{featuredPost.title}</h3>
+                  <p className="text-gray-700 text-base mb-6">{featuredPost.excerpt}</p>
+                  <div className="flex items-center text-sm font-semibold text-slate-800 mb-6">
+                    <User className="h-4 w-4 mr-2 text-brand-primary" />
                     <span className="mr-4">{featuredPost.author}</span>
-                    <Calendar className="h-4 w-4 mr-2" />
+                    <Calendar className="h-4 w-4 mr-2 text-brand-primary" />
                     <span className="mr-4">{featuredPost.date}</span>
-                    <Clock className="h-4 w-4 mr-2" />
+                    <Clock className="h-4 w-4 mr-2 text-brand-primary" />
                     <span>{featuredPost.readTime}</span>
                   </div>
-                  <Button className="bg-primary hover:bg-primary/90 text-white w-fit">
+                  <Button variant={"secondary"} className=" w-fit mr-auto">
                     Read Full Article <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
                 </CardContent>
@@ -146,15 +117,15 @@ export default function BlogPage() {
       )}
 
       {/* Blog Posts Grid */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-12">
-            <h2 className="text-3xl font-bold text-contrast-dark">Recent Articles</h2>
+            <h2 className="text-4xl font-bold text-brand-complimentary">Recent Articles</h2>
             <div className="flex gap-4">
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+              <Button variant="secondary" className="">
                 All Categories
               </Button>
-              <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-white">
+              <Button variant="outline" className="border-brand-primary text-slate-800 hover:bg-brand-secondary hover:border-brand-secondary hover:text-white">
                 Market Analysis
               </Button>
             </div>
@@ -164,7 +135,7 @@ export default function BlogPage() {
             {regularPosts.map((post) => (
               <Card
                 key={post.id}
-                className="border-neutral/30 hover:shadow-lg transition-all hover:-translate-y-1 overflow-hidden"
+                className="border-neutral/30 transition-all overflow-hidden group"
               >
                 <div className="relative">
                   <Image
@@ -178,16 +149,16 @@ export default function BlogPage() {
                     <Badge className="bg-primary text-white">{post.category}</Badge>
                   </div>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-contrast-dark mb-3 line-clamp-2">{post.title}</h3>
-                  <p className="text-secondary text-sm mb-4 line-clamp-3">{post.excerpt}</p>
+                <CardContent className="p-6 bg-white">
+                  <h3 className="text-xl font-bold text-brand-complimentary mb-3 line-clamp-2">{post.title}</h3>
+                  <p className="text-gray-800 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
 
-                  <div className="flex items-center text-xs text-secondary mb-4">
-                    <User className="h-3 w-3 mr-1" />
+                  <div className="flex items-center text-xs text-brand-secondary mb-4">
+                    <User className="h-3 w-3 mr-1 text-brand-primary" />
                     <span className="mr-3">{post.author}</span>
-                    <Calendar className="h-3 w-3 mr-1" />
+                    <Calendar className="h-3 w-3 mr-1 text-brand-primary" />
                     <span className="mr-3">{post.date}</span>
-                    <Clock className="h-3 w-3 mr-1" />
+                    <Clock className="h-3 w-3 mr-1 text-brand-primary" />
                     <span>{post.readTime}</span>
                   </div>
 
@@ -209,25 +180,7 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-20 bg-primary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-4">Stay Informed</h2>
-          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-            Subscribe to our newsletter to receive the latest market insights, industry news, and expert analysis
-            directly in your inbox.
-          </p>
-          <div className="max-w-md mx-auto flex gap-4">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="flex-1 px-4 py-3 rounded-lg text-contrast-dark focus:outline-none focus:ring-2 focus:ring-white"
-            />
-            <Button className="bg-white text-primary hover:bg-gray-100 px-6">Subscribe</Button>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
+      <CtaSection />
     </div>
   )
 }

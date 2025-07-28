@@ -145,7 +145,7 @@ export function HeroSlider() {
 
       {/* Content */}
       <div className="relative h-full flex items-center z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div
               className={`bg-white/0 transition-all duration-500 ${
@@ -156,10 +156,10 @@ export function HeroSlider() {
                 <span className="w-1 h-1 bg-brand-primary/30 flex my-auto"></span>
                 <p className="text-white/80 font-semibold text-xs uppercase my-auto tracking-widest">{currentSlideData.badge}</p>
               </div>
-              <h1 className="text-4xl md:text-7xl capitalize font-bold text-brand-primary mb-6 leading-[1.1]">
+              <h1 className="text-4xl md:text-7xl capitalize font-bold text-brand-primary mb-4 leading-[1.1]">
                 {currentSlideData.title}
               </h1>
-              <p className="text-white text-base mb-8">{currentSlideData.description}</p>
+              <p className="text-white text-base mb-4">{currentSlideData.description}</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href={currentSlideData.primaryButton.href}>
                   <Button variant={"default"}>
