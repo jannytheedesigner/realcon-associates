@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PublishConfigData" serverName="cool" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="cool">
+      <paths name="cool (1)">
         <serverdata>
           <mappings>
             <mapping deploy="/html/realcon-associates" local="$PROJECT_DIR$" web="/" />

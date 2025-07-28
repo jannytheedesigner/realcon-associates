@@ -15,7 +15,7 @@ export default function NotFound() {
             <Search className="h-16 w-16 text-primary mx-auto mb-6" />
             <h1 className="text-4xl font-bold text-contrast-dark mb-4">Project Not Found</h1>
             <p className="text-lg text-secondary mb-8">
-              The project you're looking for doesn't exist or may have been moved.
+              The project you are looking for does not exist or may have been moved.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/portfolio">

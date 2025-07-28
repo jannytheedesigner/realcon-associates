@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="5a35e666-b3bd-4dfa-9b66-efb2d8353621" name="cool" url="http://193.181.209.180">
+      <webServer id="10fdb09d-f6c1-4e51-aabd-c8c6f47887eb" name="cool (1)" url="http://193.181.209.180">
         <fileTransfer host="193.181.209.180" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
@@ -10,5 +10,13 @@
         </fileTransfer>
       </webServer>
     </option>
+    <groups>
+      <group>
+        <name>cool</name>
+        <servers>
+          <name value="cool (1)" />
+        </servers>
+      </group>
+    </groups>
   </component>
 </project>
