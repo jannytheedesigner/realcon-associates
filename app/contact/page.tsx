@@ -8,14 +8,15 @@ import Image from "next/image"
 export default function ContactPage() {
   return (
       <div className="bg-gray-100">
-        <div className={"bg-brand-secondary py-32"}>
-          <div className="text-center flex flex-col mb-12">
+        <div className={"bg-brand-secondary py-32 relative overflow-hidden"}>
+          <Image src={"/images/slide-1.webp"} alt={"address-image"} width={"500"} height={"500"} className={"object-cover w-full h-full inset-0 absolute"} />
+          <div className="text-center relative z-30 flex flex-col mb-12 max-w-5xl mx-auto px-6">
             <div className="flex flex-row mx-auto gap-2 mb-3">
               <span className="w-1 h-1 bg-brand-primary flex my-auto"></span>
               <p className="text-xs my-auto uppercase font-semibold text-brand-primary-light tracking-widest">contact page</p>
             </div>
             <h2 className="text-5xl text-white font-bold mb-4">Get Started with Us</h2>
-            <p className="text-white/60 max-w-2xl mx-auto">
+            <p className="text-white/90 max-w-2xl mx-auto">
               Over the years, Realcon Associates has achieved key milestones and delivered impactful results in Malawi’s real estate and construction industry.
             </p>
           </div>
@@ -24,12 +25,12 @@ export default function ContactPage() {
 
           <div className="grid md:grid-cols-1 gap-10 mb-20">
             {/* Contact Options */}
-            <div className="grid grid-cols-3 gap-10 mt-[-7em]">
+            <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-10 mt-[-7em] relative z-40">
               <Card className="p-6 bg-brand-primary transition-all">
                 <CardContent className="flex flex-col gap-4 p-6">
-                  <Mail className="text-white stroke-[1px] w-16 h-16 mt-1" />
-                  <div>
-                    <h3 className="text-xl text-brand-complimentary">Send us an Email</h3>
+                  <Mail className="text-white stroke-[1px] w-16 h-16 mx-auto mt-1" />
+                  <div className={"text-center"}>
+                    <h3 className="text-xl text-brand-complimentary ">Send us an Email</h3>
                     <p className="text-sm text-brand-secondary/80">
                       Send an email — we’ll respond promptly.
                     </p>
@@ -40,8 +41,8 @@ export default function ContactPage() {
 
               <Card className="p-6 bg-brand-primary transition-all">
                 <CardContent className="flex flex-col gap-4 p-6">
-                  <Phone className="text-white stroke-[1px] w-16 h-16 mt-1" />
-                  <div>
+                  <Phone className="text-white stroke-[1px] w-16 h-16 mx-auto mt-1" />
+                  <div className={"text-center"}>
                     <h3 className="text-xl text-brand-complimentary">Call us now</h3>
                     <p className="text-sm text-brand-secondary/80">
                       Make a call directly — we’ll pick up.
@@ -53,9 +54,9 @@ export default function ContactPage() {
 
               <Card className="p-6 bg-brand-primary transition-all">
                 <CardContent className="flex flex-col gap-4 p-6">
-                  <Calendar className="text-white stroke-[1px] w-16 h-16 mt-1" />
-                  <div>
-                    <h3 className="text-lg text-brand-complimentary">Schedule a Meeting</h3>
+                  <Calendar className="text-white stroke-[1px] w-16 h-16 mx-auto mt-1" />
+                  <div className={"text-center"}>
+                    <h3 className="text-xl text-brand-complimentary">Schedule a Meeting</h3>
                     <p className="text-sm text-brand-secondary/80">
                      We can also talk to you later.
                     </p>
@@ -66,8 +67,8 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className={"grid grid-cols-2 gap-10"}>
-            <div className={"relative overflow-hidden"}>
+          <div className={"grid lg:grid-cols-2 gap-10"}>
+            <div className={"relative overflow-hidden rounded-sm"}>
               <Image src={"/images/slide-1.webp"} alt={"address-image"} width={"500"} height={"500"} className={"object-cover w-full h-full inset-0 absolute"} />
             </div>
             {/* Contact Form */}
